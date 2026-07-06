@@ -1,7 +1,7 @@
 // Shared data source for the Solutions section: package tiers and the
 // selectable "solution design" templates (based on real projects).
 
-export type Tier = "wordpress" | "frontend" | "fullstack";
+export type Tier = "wordpress" | "frontend" | "fullstack" | "shopify" | "brand" | "app";
 
 export type OngoingCost = { label: string; cost: string };
 
@@ -115,12 +115,109 @@ export const packages: Package[] = [
       { label: "Payments (Stripe)", cost: "per-transaction fee" },
     ],
   },
+  {
+    id: "shopify",
+    name: "Shopify E-Commerce",
+    tagline: "A fully branded store — launch fast, sell from day one.",
+    priceFrom: "Fra 15.000 kr.",
+    buildTime: "6–10 dage",
+    bestFor: "Brands, boutiques, D2C products",
+    stack: ["Shopify", "Liquid", "Custom theme", "Klaviyo"],
+    deployment: "Shopify-hosted — managed checkout, CDN and payments built in",
+    includes: [
+      "UX/UI design in Figma",
+      "Custom Liquid theme (or premium theme customised)",
+      "Product catalogue & collections setup",
+      "Payment, shipping & tax configuration",
+      "Klaviyo abandoned-cart & welcome flows",
+      "On-page SEO + product schema markup",
+    ],
+    marketingIncludes: [
+      "Product & collection schema (rich snippets)",
+      "SEO metadata for all product & collection pages",
+      "Google Shopping feed ready",
+      "Klaviyo flows — welcome series & abandoned cart",
+      "Facebook & Instagram Shop integration",
+      "Analytics-ready (GA4 + Shopify native analytics)",
+    ],
+    ongoing: [
+      { label: "Shopify Basic", cost: "~280 kr./month" },
+      { label: "Domain", cost: "40–90 kr./year" },
+      { label: "Transaction fees (Stripe)", cost: "per-transaction" },
+      { label: "Klaviyo", cost: "Free up to 500 contacts" },
+    ],
+  },
+  {
+    id: "brand",
+    name: "Brand Identity",
+    tagline: "Logo, colour, typography and guidelines — a foundation to build on.",
+    priceFrom: "Fra 8.500 kr.",
+    buildTime: "5–8 dage",
+    bestFor: "Startups, relaunches, product launches",
+    stack: ["Figma", "Illustrator", "Brand guidelines PDF", "Asset exports"],
+    deployment: "Delivered as Figma file + PDF brand book + SVG/PNG/PDF exports",
+    includes: [
+      "Brand discovery workshop (1 hour)",
+      "Logo design — 3 concepts, 2 revision rounds",
+      "Colour palette & typography system",
+      "Brand guidelines document",
+      "Digital & print-ready asset exports",
+      "Social media templates (Instagram, LinkedIn)",
+    ],
+    marketingIncludes: [
+      "Consistent visual identity across all touchpoints",
+      "Social media kit — profile, cover & post templates",
+      "Brand-ready for Meta Ads & Google Display",
+      "Favicon & app icon variants",
+      "Email signature template",
+      "Open Graph / social share image template",
+    ],
+    ongoing: [
+      { label: "Figma (optional)", cost: "Free tier available" },
+      { label: "Font licences (if needed)", cost: "Varies by typeface" },
+    ],
+  },
+  {
+    id: "app",
+    name: "Mobile App",
+    tagline: "A native-feeling app for iOS & Android — or a Progressive Web App.",
+    priceFrom: "Fra 35.000 kr.",
+    buildTime: "4–8 uger",
+    bestFor: "SaaS, booking systems, loyalty & membership apps",
+    stack: ["React Native", "Expo", "TypeScript", "Supabase"],
+    deployment: "App Store & Google Play via Expo EAS — or Vercel for PWA",
+    includes: [
+      "UX/UI design in Figma (iOS & Android screens)",
+      "React Native cross-platform build",
+      "Push notifications & deep links",
+      "Authentication (email, Google, Apple Sign-In)",
+      "Backend API & database",
+      "App Store & Play Store submission",
+    ],
+    marketingIncludes: [
+      "App Store Optimisation (ASO) basics",
+      "App icon, screenshots & store listing copy",
+      "Deep link support for paid ad campaigns",
+      "Analytics integration (Mixpanel / PostHog)",
+      "Crash reporting & performance monitoring",
+      "Attribution-ready (AppsFlyer / Adjust)",
+    ],
+    ongoing: [
+      { label: "Apple Developer", cost: "~700 kr./year" },
+      { label: "Google Play", cost: "one-time ~160 kr." },
+      { label: "Expo EAS Build", cost: "Free – ~150 kr./month" },
+      { label: "Backend (Supabase)", cost: "Free – ~190 kr./month" },
+    ],
+  },
 ];
 
 export const tierLabels: Record<Tier, string> = {
   wordpress: "WordPress Starter",
   frontend: "Custom Frontend",
   fullstack: "Full-Stack Web App",
+  shopify: "Shopify E-Commerce",
+  brand: "Brand Identity",
+  app: "Mobile App",
 };
 
 export type SolutionDesign = {
@@ -264,6 +361,96 @@ export const designs: SolutionDesign[] = [
     ],
     outcome:
       "A self-editable, professional site live in about a week — typically 5–8 working days.",
+  },
+  {
+    slug: "shopify-store",
+    title: "Shopify — DTC Fashion Store",
+    tier: "shopify",
+    tag: "SHOPIFY / E-COMMERCE",
+    year: "2024",
+    role: "Design & Shopify Development",
+    designTime: "6–10 dage",
+    desc: "A fully branded Shopify store with a custom Liquid theme, product catalogue and Klaviyo flows. Pick this design for a fast, polished DTC launch.",
+    overview:
+      "End-to-end Shopify build — custom Liquid theme, collections, abandoned-cart email flows and Google Shopping integration. A solid blueprint for any product-selling brand.",
+    img: "https://doyoungkim.com/images/projects/WebDevelopment/Name.gif",
+    tech: ["Shopify", "Liquid", "Klaviyo", "Figma"],
+    live: null,
+    deployment: "Shopify-hosted — managed checkout, CDN and payments",
+    hosting: "Shopify Basic — no separate hosting needed",
+    ongoing: [
+      { label: "Shopify Basic", cost: "~280 kr./month" },
+      { label: "Domain", cost: "40–90 kr./year" },
+      { label: "Klaviyo", cost: "Free up to 500 contacts" },
+    ],
+    process: [
+      { heading: "01 — Discovery", body: "Map product catalogue, collections, brand guidelines and checkout requirements." },
+      { heading: "02 — UX & visual design", body: "Design all key screens in Figma — home, PLP, PDP, cart and checkout." },
+      { heading: "03 — Liquid theme build", body: "Custom Liquid sections and blocks wired to Shopify's data model." },
+      { heading: "04 — Integrations & launch", body: "Klaviyo flows, Google Shopping feed, analytics and final QA before go-live." },
+    ],
+    outcome:
+      "A launch-ready branded Shopify store — typically 6–10 working days from kickoff to live.",
+  },
+  {
+    slug: "brand-identity",
+    title: "Brand Identity — Visual System",
+    tier: "brand",
+    tag: "BRAND IDENTITY",
+    year: "2024",
+    role: "Brand Design",
+    designTime: "5–8 dage",
+    desc: "A complete visual identity — logo, colour, type and guidelines. Pick this design for a strong brand foundation before a website or app build.",
+    overview:
+      "Full brand identity project: logo family, colour palette, typography system, brand guidelines document and a full asset export pack — everything you need to build on.",
+    img: "https://doyoungkim.com/images/projects/WebDevelopment/ferm-resposible.gif",
+    tech: ["Figma", "Illustrator", "Brand guidelines PDF"],
+    live: null,
+    deployment: "Figma master file + PDF brand book + SVG/PNG/PDF exports",
+    hosting: "No hosting required — files delivered via shared Figma & download link",
+    ongoing: [
+      { label: "Figma (optional)", cost: "Free tier available" },
+      { label: "Font licences (if needed)", cost: "Varies by typeface" },
+    ],
+    process: [
+      { heading: "01 — Discovery workshop", body: "1-hour session to align on brand values, audience, competitors and visual references." },
+      { heading: "02 — Concept exploration", body: "3 distinct logo directions with rationale — rooted in the discovery findings." },
+      { heading: "03 — Refinement", body: "2 rounds of revisions on the chosen direction, building out the full system." },
+      { heading: "04 — Delivery", body: "Brand guidelines PDF, Figma file handover, and all production-ready asset exports." },
+    ],
+    outcome:
+      "A cohesive visual identity ready to apply across web, print and social — typically 5–8 working days.",
+  },
+  {
+    slug: "mobile-app",
+    title: "Mobile App — React Native",
+    tier: "app",
+    tag: "MOBILE APP / REACT NATIVE",
+    year: "2024",
+    role: "Design & Development",
+    designTime: "4–8 uger",
+    desc: "A cross-platform app for iOS & Android built with React Native. Pick this design for a booking, membership or SaaS product that needs a mobile presence.",
+    overview:
+      "React Native app designed and built from scratch — authentication, push notifications, a Supabase backend and a smooth App Store submission workflow.",
+    img: "https://doyoungkim.com/images/projects/WebDevelopment/Backroads-responsible.gif",
+    tech: ["React Native", "Expo", "TypeScript", "Supabase"],
+    live: null,
+    deployment: "App Store & Google Play via Expo EAS — continuous delivery from Git",
+    hosting: "Expo EAS (builds) + Supabase (backend) + Expo Push Notifications",
+    ongoing: [
+      { label: "Apple Developer", cost: "~700 kr./year" },
+      { label: "Google Play", cost: "one-time ~160 kr." },
+      { label: "Expo EAS Build", cost: "Free – ~150 kr./month" },
+      { label: "Backend (Supabase)", cost: "Free – ~190 kr./month" },
+    ],
+    process: [
+      { heading: "01 — Scoping & UX", body: "Define core user journeys, navigation structure and API shape." },
+      { heading: "02 — UI design", body: "Full screen designs in Figma for both iOS and Android form factors." },
+      { heading: "03 — App build", body: "React Native screens, navigation, auth, API integration and push notifications." },
+      { heading: "04 — Store submission", body: "App icon, screenshots, store listing copy and submission to both stores." },
+    ],
+    outcome:
+      "A production app live on App Store and Google Play — typically 4–8 weeks from kickoff.",
   },
 ];
 
