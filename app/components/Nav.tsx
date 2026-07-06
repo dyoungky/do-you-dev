@@ -4,9 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const links = [
-  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
-  { label: "Prices", href: "/prices" },
+  { label: "Work", href: "/work" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -35,7 +34,7 @@ export default function Nav() {
           className="text-base font-medium tracking-tight text-[#324b75]"
           style={{ fontFamily: "var(--font-sans)" }}
         >
-          DOYOU
+          doyou.dev
         </Link>
 
         <ul className="hidden md:flex gap-8 items-center">

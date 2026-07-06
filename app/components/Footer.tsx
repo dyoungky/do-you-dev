@@ -5,7 +5,7 @@ export default function Footer() {
         {/* Top grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16 text-xs tracking-[0.1em] uppercase">
           <div className="flex flex-col gap-3">
-            <p className="text-white/50 mb-1">Doyou</p>
+            <p className="text-white/50 mb-1">doyou.dev</p>
             {[
               { label: "Work", href: "/work" },
               { label: "About", href: "/about" },
@@ -43,7 +43,7 @@ export default function Footer() {
             className="text-[18vw] leading-none tracking-tight text-white select-none"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            Doyou
+            doyou.dev
           </h2>
           <p className="text-xs text-white/30 pb-3 shrink-0 ml-4">© {new Date().getFullYear()}</p>
         </div>

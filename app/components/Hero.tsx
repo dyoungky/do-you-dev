@@ -13,28 +13,16 @@ export default function Hero() {
   return (
     <section className="pt-56 pb-40 px-8 max-w-6xl mx-auto">
       <h1
-        className="text-6xl md:text-8xl leading-[1.05] tracking-tight mb-10 text-[#313967]"
+        className="text-5xl md:text-7xl leading-[1.05] tracking-tight mb-10 text-[#313967]"
         style={{ fontFamily: "var(--font-serif)" }}
       >
-        <span
-          style={{
-            color: "#4770bd",
-            display: "inline-block",
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0px)" : "translateY(20px)",
-            transition: "opacity 0.7s ease, transform 0.7s ease",
-          }}
-        >
-          One person.
-        </span>
-        <br />
         <em
           className="italic text-[#293465]"
           style={{
             display: "inline-block",
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0px)" : "translateY(20px)",
-            transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
+            transition: "opacity 0.7s ease, transform 0.7s ease",
           }}
         >
           Design and development.

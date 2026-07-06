@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
@@ -9,6 +12,7 @@ const projects = [
     desc: "Built full-stack e-commerce site 'NAME' at ITU, starting with HTML/CSS/JS and later rebuilt in React.",
     tech: ["React", "TypeScript", "Node.js", "Express", "REST API", "HTML", "CSS"],
     img: "https://doyoungkim.com/images/projects/WebDevelopment/Name.gif",
+    slug: "name-ecommerce",
     github: "https://github.com/dyoungky/ITU-FinalProject-NAME",
     live: null,
   },
@@ -19,6 +23,7 @@ const projects = [
     desc: "WordPress-based project with custom theme design and content management.",
     tech: ["WordPress", "HTML", "CSS"],
     img: "https://doyoungkim.com/images/projects/WebDevelopment/Dkemy.gif",
+    slug: "dkemy",
     github: null,
     live: null,
   },
@@ -29,6 +34,7 @@ const projects = [
     desc: "Simple web application built with React, showcasing a collection of furniture items from Ferm Living.",
     tech: ["React", "HTML", "CSS"],
     img: "https://doyoungkim.com/images/projects/WebDevelopment/ferm-resposible.gif",
+    slug: "ferm-living",
     github: "https://github.com/dyoungky/FermLiving",
     live: "https://react-fermliving-dy.netlify.app/",
   },
@@ -39,6 +45,7 @@ const projects = [
     desc: "Web application built with React, designed for a travel agency allowing users to browse destinations and travel packages.",
     tech: ["React", "HTML", "CSS"],
     img: "https://doyoungkim.com/images/projects/WebDevelopment/Backroads-responsible.gif",
+    slug: "back-roads",
     github: "https://github.com/dyoungky/BACKROADS",
     live: "https://react-backroads-dy.netlify.app/",
   },
@@ -65,25 +72,27 @@ export default function Work() {
         {/* Project list */}
         <div className="divide-y divide-[#324b75]/10">
           {projects.map((p) => (
-            <div key={p.num} className="py-16 grid md:grid-cols-2 gap-12 items-start">
+            <div key={p.num} className="group/row py-16 grid md:grid-cols-2 gap-12 items-start">
               {/* Image */}
-              <div className="overflow-hidden bg-[#e8e4dd] aspect-[16/10] group">
+              <Link href={`/work/${p.slug}`} className="overflow-hidden bg-[#e8e4dd] aspect-[16/10] block">
                 <img
                   src={p.img}
                   alt={p.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover/row:scale-105 transition-transform duration-700"
                 />
-              </div>
+              </Link>
 
               {/* Info */}
               <div className="flex flex-col justify-center">
                 <p className="text-[10px] tracking-[0.14em] uppercase text-[#324b75]/40 mb-3">{p.tag}</p>
-                <h2
-                  className="text-3xl md:text-4xl leading-snug mb-4"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {p.title}
-                </h2>
+                <Link href={`/work/${p.slug}`}>
+                  <h2
+                    className="text-3xl md:text-4xl leading-snug mb-4 hover:text-[#293465] transition-colors"
+                    style={{ fontFamily: "var(--font-serif)" }}
+                  >
+                    {p.title}
+                  </h2>
+                </Link>
                 <p className="text-[15px] text-[#324b75]/65 leading-relaxed mb-6">{p.desc}</p>
 
                 {/* Tech tags */}
@@ -100,6 +109,12 @@ export default function Work() {
 
                 {/* Links */}
                 <div className="flex gap-6">
+                  <Link
+                    href={`/work/${p.slug}`}
+                    className="text-xs tracking-[0.1em] uppercase text-[#293465] border-b border-[#293465]/40 pb-px hover:border-[#293465] transition-colors"
+                  >
+                    View Case →
+                  </Link>
                   {p.github && (
                     <a
                       href={p.github}
