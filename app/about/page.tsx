@@ -1,43 +1,18 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About — UX/UI designer & frontend developer in Copenhagen",
+  description:
+    "Doyoung Kim Gormsen — frontend developer and designer based in Østerbro, Copenhagen. Bridging aesthetics and functionality with responsive, accessible websites.",
+  alternates: { canonical: "/about" },
+};
 
 const skills = [
   "HTML", "CSS", "JavaScript", "React",
   "jQuery", "Bootstrap", "WordPress",
   "Figma", "Photoshop", "Illustration", "Git",
-];
-
-const experience = [
-  {
-    role: "Frontend Developer Intern",
-    company: "Juris Legal",
-    period: "Mar 2026 — Present",
-    desc: "Design marketing pages, build responsive components, and use AI tools for content workflows.",
-  },
-  {
-    role: "Career Break",
-    company: "Parenting",
-    period: "Jun 2024 — Jul 2025",
-    desc: "",
-  },
-  {
-    role: "Senior Web Designer",
-    company: "KIPI",
-    period: "Apr 2016 — Dec 2018",
-    desc: "Led a major search page redesign project and managed the company's visual identity system.",
-  },
-  {
-    role: "Junior Web Designer",
-    company: "KIPI",
-    period: "Dec 2015 — Apr 2016",
-    desc: "Created an internal web magazine and designed seasonal campaign themes.",
-  },
-  {
-    role: "Web Design Intern",
-    company: "KIPI",
-    period: "Aug 2015 — Dec 2015",
-    desc: "Illustrated graphics and designed print materials for marketing campaigns.",
-  },
 ];
 
 const education = [
@@ -115,32 +90,6 @@ export default function About() {
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* Experience */}
-        <div className="mb-24 border-t border-[#324b75]/10 pt-16">
-          <p className="text-xs tracking-[0.14em] uppercase text-[#324b75]/40 mb-8">Experience</p>
-          <div className="divide-y divide-[#324b75]/8">
-            {experience.map((e) => (
-              <div key={e.role + e.company} className="py-8 grid md:grid-cols-[1fr_2fr] gap-6">
-                <div>
-                  <p className="text-xs text-[#324b75]/40 mb-1">{e.period}</p>
-                  <p className="text-sm font-medium">{e.company}</p>
-                </div>
-                <div>
-                  <p
-                    className="text-lg mb-2 leading-snug"
-                    style={{ fontFamily: "var(--font-serif)" }}
-                  >
-                    {e.role}
-                  </p>
-                  {e.desc && (
-                    <p className="text-sm text-[#324b75]/55 leading-relaxed">{e.desc}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Education */}

@@ -28,6 +28,14 @@ const faqs = [
     q: "Are the prices fixed or can they vary?",
     a: "The listed prices are starting points. Final pricing depends on scope, complexity, and timeline. I'll always agree on a fixed price before starting.",
   },
+  {
+    q: "What does it cost to run the site after launch?",
+    a: "Beyond the build, you pay third-party running costs — a domain (around 40–90 kr./year), hosting (from free on Vercel up to a few hundred kr./month for WordPress or a database), and optionally business email. I'll always lay these out transparently up front, and you own every account.",
+  },
+  {
+    q: "Do you also handle SEO and paid ads?",
+    a: "Every site ships with a solid technical SEO baseline — clean markup, fast load times, metadata, sitemap and structured data. I can also set up on-page SEO and get you started with Google or Meta ads. Ongoing SEO and ad campaigns aren't my core specialty, so for long-running work I'll gladly point you to trusted specialists.",
+  },
 ];
 
 export default function FAQ() {

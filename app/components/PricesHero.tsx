@@ -42,7 +42,7 @@ export default function PricesHero() {
           just reach out and we'll figure out something that works.
         </p>
         <a
-          href="#contact"
+          href="/#contact"
           className="text-sm text-[#293465] underline underline-offset-4 decoration-[#293465]/30 hover:decoration-[#293465] transition-all"
         >
           Or just send me a message →

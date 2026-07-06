@@ -5,20 +5,20 @@ import { useInView } from "../hooks/useInView";
 const plans = [
   {
     name: "Design Only",
-    price: "From ₩800,000",
+    price: "Fra 6.000 kr.",
     desc: "UI/UX design, no code.",
     items: ["UX Research & Wireframes", "High-fidelity Figma UI", "Interactive Prototype", "2 revision rounds"],
   },
   {
     name: "Design + Dev",
-    price: "From ₩2,000,000",
+    price: "Fra 18.000 kr.",
     desc: "Full design and frontend build.",
     items: ["Everything in Design Only", "React / Next.js Build", "Responsive & Accessible", "Deployment & Handoff"],
     highlight: true,
   },
   {
     name: "Retainer",
-    price: "₩1,500,000 / mo",
+    price: "11.000 kr. / md",
     desc: "Ongoing design & dev support.",
     items: ["Up to 40 hrs / month", "Priority turnaround", "Design & code updates", "Cancel anytime"],
   },
@@ -64,7 +64,7 @@ export default function Prices() {
                   ))}
                 </ul>
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className={`text-xs tracking-[0.14em] uppercase text-center py-3 border transition-colors ${
                     p.highlight
                       ? "border-white/40 text-white hover:bg-white hover:text-[#293465]"

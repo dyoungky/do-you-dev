@@ -7,9 +7,9 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <p className="text-white/50 mb-1">doyou.dev</p>
             {[
-              { label: "Work", href: "/work" },
+              { label: "Solutions", href: "/solutions" },
               { label: "About", href: "/about" },
-              { label: "Prices", href: "#prices" },
+              { label: "Prices", href: "/prices" },
               { label: "Contact", href: "#contact" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="text-white/60 hover:text-white transition-colors">{l.label}</a>
@@ -33,7 +33,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <p className="text-white/50 mb-1">Contact</p>
             <span className="text-white/60">dyoungky.dk@gmail.com</span>
-            <span className="text-white/60">Copenhagen, Denmark</span>
+            <span className="text-white/60">Østerbro, Copenhagen</span>
           </div>
         </div>
 

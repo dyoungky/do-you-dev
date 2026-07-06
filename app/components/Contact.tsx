@@ -35,7 +35,7 @@ export default function Contact() {
             </p>
             <div className="flex flex-col gap-1.5 text-sm text-[#324b75]/45">
               <span>dyoungky.dk@gmail.com</span>
-              <span>Copenhagen, Denmark</span>
+              <span>Østerbro, Copenhagen, Denmark</span>
             </div>
           </div>
 

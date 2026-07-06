@@ -1,6 +1,6 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import Cases from "./components/Cases";
+import Solutions from "./components/Solutions";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -11,7 +11,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Cases />
+        <Solutions />
         <Services />
         <Contact />
       </main>

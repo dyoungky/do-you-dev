@@ -43,11 +43,11 @@ export default function Hero() {
         </p>
         <p>
           Browse my latest{" "}
-          <a href="/work" className="font-semibold text-[#313967] underline underline-offset-2 decoration-[#293465] hover:text-[#293465] transition-colors">
-            work
+          <a href="/solutions" className="font-semibold text-[#313967] underline underline-offset-2 decoration-[#293465] hover:text-[#293465] transition-colors">
+            solutions
           </a>
           ,{" "}
-          <a href="#prices" className="font-semibold text-[#313967] underline underline-offset-2 decoration-[#293465] hover:text-[#293465] transition-colors">
+          <a href="/prices" className="font-semibold text-[#313967] underline underline-offset-2 decoration-[#293465] hover:text-[#293465] transition-colors">
             see pricing
           </a>
           , or{" "}
