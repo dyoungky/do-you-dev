@@ -180,11 +180,7 @@ export default function SolutionsPage() {
                     >
                       View design →
                     </Link>
-                    {d.github && (
-                      <a href={d.github} target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.1em] uppercase text-[#293465] border-b border-[#293465]/40 pb-px hover:border-[#293465] transition-colors">
-                        GitHub →
-                      </a>
-                    )}
+
                     {d.live && (
                       <a href={d.live} target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.1em] uppercase text-[#293465] border-b border-[#293465]/40 pb-px hover:border-[#293465] transition-colors">
                         Live demo →

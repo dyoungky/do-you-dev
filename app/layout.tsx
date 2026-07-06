@@ -71,7 +71,6 @@ const jsonLd = {
   },
   sameAs: [
     "https://www.linkedin.com/in/doyoung-kim-35108916a/",
-    "https://github.com/dyoungky",
   ],
 };
 

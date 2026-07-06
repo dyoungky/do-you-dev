@@ -115,7 +115,6 @@ export type SolutionDesign = {
   overview: string;
   img: string;
   tech: string[];
-  github: string | null;
   live: string | null;
   deployment: string;
   hosting: string;
@@ -127,7 +126,7 @@ export type SolutionDesign = {
 export const designs: SolutionDesign[] = [
   {
     slug: "name-ecommerce",
-    title: "NAME",
+    title: "Full-Stack — E-Commerce Shop",
     tier: "fullstack",
     tag: "FULL-STACK / E-COMMERCE",
     year: "2023",
@@ -138,7 +137,6 @@ export const designs: SolutionDesign[] = [
       "Full-stack e-commerce platform. Started as a plain HTML/CSS/JS prototype and evolved into a React + Node.js application with a REST API — a solid blueprint for any product-selling business.",
     img: "https://doyoungkim.com/images/projects/WebDevelopment/Name.gif",
     tech: ["React", "TypeScript", "Node.js", "Express", "REST API"],
-    github: "https://github.com/dyoungky/ITU-FinalProject-NAME",
     live: null,
     deployment: "Next.js frontend on Vercel + Node API and PostgreSQL on a managed host",
     hosting: "Vercel (frontend) + Supabase/Neon (database) + Stripe (payments)",
@@ -159,9 +157,9 @@ export const designs: SolutionDesign[] = [
   },
   {
     slug: "ferm-living",
-    title: "Ferm Living",
+    title: "Custom Frontend — Brand Catalogue",
     tier: "frontend",
-    tag: "CUSTOM FRONTEND / REACT",
+    tag: "CUSTOM FRONTEND / BRAND",
     year: "2022",
     role: "UI Design & Frontend",
     designTime: "8–12 dage",
@@ -170,7 +168,6 @@ export const designs: SolutionDesign[] = [
       "Product browsing experience for a furniture brand, focused on intuitive navigation and visual hierarchy using React — a great template for brand and catalogue sites.",
     img: "https://doyoungkim.com/images/projects/WebDevelopment/ferm-resposible.gif",
     tech: ["React", "Next.js", "Tailwind"],
-    github: "https://github.com/dyoungky/FermLiving",
     live: "https://react-fermliving-dy.netlify.app/",
     deployment: "Static/SSR frontend deployed to Vercel or Netlify",
     hosting: "Vercel / Netlify — global CDN, optional Sanity CMS",
@@ -190,9 +187,9 @@ export const designs: SolutionDesign[] = [
   },
   {
     slug: "back-roads",
-    title: "Back Roads",
+    title: "Custom Frontend — Listings Site",
     tier: "frontend",
-    tag: "CUSTOM FRONTEND / TRAVEL",
+    tag: "CUSTOM FRONTEND / LISTINGS",
     year: "2022",
     role: "UI Design & Frontend",
     designTime: "7–10 dage",
@@ -201,7 +198,6 @@ export const designs: SolutionDesign[] = [
       "Travel agency web app built with React where users browse destinations and packages — a flexible template for any listing-based marketing site.",
     img: "https://doyoungkim.com/images/projects/WebDevelopment/Backroads-responsible.gif",
     tech: ["React", "Next.js", "Tailwind"],
-    github: "https://github.com/dyoungky/BACKROADS",
     live: "https://react-backroads-dy.netlify.app/",
     deployment: "Static/SSR frontend deployed to Vercel or Netlify",
     hosting: "Vercel / Netlify — global CDN, optional headless CMS for listings",
@@ -221,9 +217,9 @@ export const designs: SolutionDesign[] = [
   },
   {
     slug: "dkemy",
-    title: "Dkemy",
+    title: "WordPress Starter — Business Site",
     tier: "wordpress",
-    tag: "WORDPRESS / STARTER",
+    tag: "WORDPRESS STARTER",
     year: "2022",
     role: "Design & Development",
     designTime: "5–8 dage",
@@ -232,7 +228,6 @@ export const designs: SolutionDesign[] = [
       "Custom WordPress site with a tailored theme focused on brand consistency and content readability — the ideal starting point for small businesses.",
     img: "https://doyoungkim.com/images/projects/WebDevelopment/Dkemy.gif",
     tech: ["WordPress", "Custom theme", "PHP"],
-    github: null,
     live: null,
     deployment: "Managed WordPress hosting with automatic backups and SSL",
     hosting: "Simply.com / One.com / SiteGround",

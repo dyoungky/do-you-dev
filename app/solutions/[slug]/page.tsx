@@ -97,11 +97,6 @@ export default async function DesignPage({ params }: { params: Promise<{ slug: s
           </div>
 
           <div className="flex gap-6 mt-8">
-            {design.github && (
-              <a href={design.github} target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.1em] uppercase text-[#293465] border-b border-[#293465]/40 pb-px hover:border-[#293465] transition-colors">
-                GitHub →
-              </a>
-            )}
             {design.live && (
               <a href={design.live} target="_blank" rel="noopener noreferrer" className="text-xs tracking-[0.1em] uppercase text-[#293465] border-b border-[#293465]/40 pb-px hover:border-[#293465] transition-colors">
                 Live demo →

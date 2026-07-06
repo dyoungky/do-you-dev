@@ -6,7 +6,7 @@ const BASE_URL = "https://doyou.dev";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const staticRoutes = ["", "/solutions", "/prices", "/about"].map((path) => ({
+  const staticRoutes = ["", "/solutions", "/prices", "/contact"].map((path) => ({
     url: `${BASE_URL}${path}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
