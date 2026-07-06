@@ -15,6 +15,7 @@ export type Package = {
   stack: string[];
   deployment: string;
   includes: string[];
+  marketingIncludes: string[];
   ongoing: OngoingCost[];
   highlight?: boolean;
 };
@@ -37,10 +38,16 @@ export const packages: Package[] = [
       "Basic on-page SEO setup",
       "1 hand-over & training session",
     ],
+    marketingIncludes: [
+      "Yoast SEO plugin — configured & verified",
+      "XML sitemap auto-generated",
+      "Page speed optimised (image compression, caching)",
+      "Google Search Console submission",
+      "Analytics script-ready (GA4 or Plausible)",
+    ],
     ongoing: [
       { label: "Domain (.dk)", cost: "40–90 kr./year" },
       { label: "Managed hosting", cost: "40–250 kr./month" },
-      { label: "Business email (Google Workspace)", cost: "45–72 kr./user/month" },
       { label: "SSL certificate", cost: "Included" },
       { label: "Maintenance (optional)", cost: "from 500 kr./month" },
     ],
@@ -62,11 +69,18 @@ export const packages: Package[] = [
       "Perfect Lighthouse performance targets",
       "Technical SEO baseline (metadata, sitemap, schema)",
     ],
+    marketingIncludes: [
+      "JSON-LD structured data (LocalBusiness / Service)",
+      "OpenGraph + Twitter card metadata",
+      "sitemap.xml + robots.txt",
+      "Core Web Vitals optimised — Lighthouse ≥ 90",
+      "Analytics-ready (one script = GA4 or Plausible)",
+      "GTM-ready (add any ad pixel without touching code)",
+    ],
     ongoing: [
       { label: "Domain", cost: "40–90 kr./year" },
       { label: "Hosting (Vercel)", cost: "Free – ~150 kr./month (Pro)" },
       { label: "CMS (Sanity)", cost: "Free tier, then usage-based" },
-      { label: "Business email", cost: "45–72 kr./user/month" },
     ],
     highlight: true,
   },
@@ -87,11 +101,17 @@ export const packages: Package[] = [
       "Payment integration (Stripe / MobilePay)",
       "Deployment, monitoring & documentation",
     ],
+    marketingIncludes: [
+      "Everything in Custom Frontend",
+      "Conversion event tracking on key user actions",
+      "GTM dataLayer integration",
+      "Google Ads + Meta Pixel ready",
+      "Performance & error monitoring",
+    ],
     ongoing: [
       { label: "Domain", cost: "40–90 kr./year" },
       { label: "Hosting (Vercel)", cost: "~150 kr./month" },
       { label: "Database (Supabase / Neon)", cost: "Free – ~190 kr./month" },
-      { label: "Business email", cost: "45–72 kr./user/month" },
       { label: "Payments (Stripe)", cost: "per-transaction fee" },
     ],
   },
@@ -234,7 +254,6 @@ export const designs: SolutionDesign[] = [
     ongoing: [
       { label: "Domain (.dk)", cost: "40–90 kr./year" },
       { label: "Managed hosting", cost: "40–250 kr./month" },
-      { label: "Business email", cost: "45–72 kr./user/month" },
       { label: "Maintenance (optional)", cost: "from 500 kr./month" },
     ],
     process: [

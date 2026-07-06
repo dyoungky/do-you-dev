@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import { designs, getDesign, tierLabels } from "../data";
+import { designs, getDesign, tierLabels, packages } from "../data";
 
 export function generateStaticParams() {
   return designs.map((d) => ({ slug: d.slug }));
@@ -34,6 +34,8 @@ export default async function DesignPage({ params }: { params: Promise<{ slug: s
   const { slug } = await params;
   const design = getDesign(slug);
   if (!design) notFound();
+
+  const pkg = packages.find((p) => p.id === design.tier)!
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -143,9 +145,26 @@ export default async function DesignPage({ params }: { params: Promise<{ slug: s
           </div>
         </div>
 
-        {/* Process */}
+        {/* Marketing foundation */}
         <div className="max-w-6xl mx-auto px-8 mb-24">
-          <p className="text-[10px] tracking-[0.14em] uppercase text-[#324b75]/35 mb-12">How it&apos;s built</p>
+          <div className="border border-[#324b75]/10 p-8 bg-[#f7f5f1]">
+            <p className="text-[10px] tracking-[0.14em] uppercase text-[#324b75]/35 mb-4">Marketing foundation — {tierLabels[design.tier]}</p>
+            <h2 className="text-xl mb-6 text-[#1a1f3c]" style={{ fontFamily: "var(--font-serif)" }}>
+              Shipped ready to be found.
+            </h2>
+            <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
+              {pkg.marketingIncludes.map((item) => (
+                <li key={item} className="flex gap-3 text-sm text-[#324b75]/65">
+                  <span className="text-[#293465]/50 mt-0.5 shrink-0">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Process */}
+        <div className="max-w-6xl mx-auto px-8 mb-24">          <p className="text-[10px] tracking-[0.14em] uppercase text-[#324b75]/35 mb-12">How it&apos;s built</p>
           <div className="divide-y divide-[#324b75]/8">
             {design.process.map((step) => (
               <div key={step.heading} className="py-10 grid md:grid-cols-[1fr_2fr] gap-16">

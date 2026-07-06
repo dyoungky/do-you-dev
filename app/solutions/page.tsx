@@ -112,6 +112,56 @@ export default function SolutionsPage() {
           </div>
         </section>
 
+        {/* Marketing foundation */}
+        <section aria-labelledby="marketing-heading" className="mb-28">
+          <div className="border border-[#324b75]/10 bg-[#faf9f6]">
+            <div className="px-8 pt-10 pb-6 border-b border-[#324b75]/10">
+              <p className="text-xs tracking-[0.14em] uppercase text-[#324b75]/40 mb-3">Built-in marketing foundation</p>
+              <h2
+                id="marketing-heading"
+                className="text-3xl md:text-4xl leading-tight max-w-xl"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                Every solution ships{" "}
+                <em className="italic text-[#293465]">ready to be found.</em>
+              </h2>
+              <p className="text-[15px] text-[#324b75]/60 leading-relaxed mt-4 max-w-2xl">
+                SEO and analytics aren&apos;t an afterthought — they&apos;re baked into the build.
+                Each package tier ships with the right marketing foundation for its price point,
+                so your site is ready for Google, paid ads, and growth from day one.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-px bg-[#324b75]/8">
+              {packages.map((p) => (
+                <div
+                  key={p.id}
+                  className={`p-8 ${p.highlight ? "bg-[#293465]" : "bg-[#faf9f6]"}`}
+                >
+                  <p className={`text-xs tracking-[0.12em] uppercase mb-5 ${p.highlight ? "text-white/50" : "text-[#324b75]/35"}`}>
+                    {p.name}
+                  </p>
+                  <ul className="flex flex-col gap-3">
+                    {p.marketingIncludes.map((item) => (
+                      <li key={item} className={`text-sm flex gap-3 ${p.highlight ? "text-white/75" : "text-[#324b75]/65"}`}>
+                        <span className={`mt-0.5 shrink-0 text-xs ${p.highlight ? "text-white/40" : "text-[#293465]/50"}`}>✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div className="px-8 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <p className="text-sm text-[#324b75]/50 max-w-lg">
+                Need paid ads or ongoing SEO campaigns? We&apos;ll set you up and point you to trusted specialists for the long term.
+              </p>
+              <a href="/#contact" className="text-xs tracking-[0.12em] uppercase border border-[#324b75]/20 px-6 py-3 whitespace-nowrap hover:bg-[#293465] hover:text-white hover:border-[#293465] transition-colors">
+                Ask about SEO & ads
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Solution designs / templates */}
         <section aria-labelledby="designs-heading">
           <div className="mb-12">
