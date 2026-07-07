@@ -30,11 +30,10 @@ export default function Contact() {
             </h2>
             <p className="text-sm text-[#324b75]/50 leading-relaxed mb-10 max-w-sm">
               Whether you need a full product designed and built, or just want to
-              improve what you already have — I'd love to hear about it.
-              I'll get back to you within 1–2 business days.
+              improve what you already have — we'd love to hear about it.
+              We'll get back to you within 1–2 business days.
             </p>
             <div className="flex flex-col gap-1.5 text-sm text-[#324b75]/45">
-              <span>dyoungky.dk@gmail.com</span>
               <span>Copenhagen, Denmark</span>
             </div>
           </div>
@@ -46,7 +45,7 @@ export default function Contact() {
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Thanks —<br />
-                <em className="italic text-[#293465]">I'll be in touch soon.</em>
+                <em className="italic text-[#293465]">We'll be in touch soon.</em>
               </p>
             </div>
           ) : (
@@ -77,7 +76,7 @@ export default function Contact() {
                   rows={5}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  placeholder="Tell me about your project — what are you building?"
+                  placeholder="Tell us about your project — what are you building?"
                   className="bg-transparent border-b border-[#324b75]/15 pb-3 text-sm focus:outline-none focus:border-[#293465] transition-colors resize-none placeholder:text-[#324b75]/20"
                 />
               </div>

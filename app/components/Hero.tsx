@@ -38,20 +38,16 @@ export default function Hero() {
         }}
       >
         <p>
-          I design interfaces people actually enjoy using — and build them too.
+          We design interfaces people actually enjoy using — and build them too.
           UX/UI design and frontend development, from wireframe to deployment.
         </p>
         <p>
-          Browse my latest{" "}
+          Browse our latest{" "}
           <a href="/work" className="font-semibold text-[#313967] underline underline-offset-2 decoration-[#293465] hover:text-[#293465] transition-colors">
             work
           </a>
-          ,{" "}
-          <a href="#prices" className="font-semibold text-[#313967] underline underline-offset-2 decoration-[#293465] hover:text-[#293465] transition-colors">
-            see pricing
-          </a>
           , or{" "}
-          <a href="#contact" className="font-semibold text-[#313967] underline underline-offset-2 decoration-[#293465] hover:text-[#293465] transition-colors">
+          <a href="/contact" className="font-semibold text-[#313967] underline underline-offset-2 decoration-[#293465] hover:text-[#293465] transition-colors">
             start a project
           </a>
           .

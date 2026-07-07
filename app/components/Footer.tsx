@@ -9,8 +9,7 @@ export default function Footer() {
             {[
               { label: "Work", href: "/work" },
               { label: "About", href: "/about" },
-              { label: "Prices", href: "#prices" },
-              { label: "Contact", href: "#contact" },
+              { label: "Contact", href: "/contact" },
             ].map((l) => (
               <a key={l.label} href={l.href} className="text-white/60 hover:text-white transition-colors">{l.label}</a>
             ))}
@@ -22,17 +21,7 @@ export default function Footer() {
             ))}
           </div>
           <div className="flex flex-col gap-3">
-            <p className="text-white/50 mb-1">Social</p>
-            {[
-              { label: "LinkedIn", href: "https://www.linkedin.com/in/doyoung-kim-35108916a/" },
-              { label: "GitHub", href: "https://github.com/dyoungky" },
-            ].map((l) => (
-              <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">{l.label}</a>
-            ))}
-          </div>
-          <div className="flex flex-col gap-3">
             <p className="text-white/50 mb-1">Contact</p>
-            <span className="text-white/60">dyoungky.dk@gmail.com</span>
             <span className="text-white/60">Copenhagen, Denmark</span>
           </div>
         </div>

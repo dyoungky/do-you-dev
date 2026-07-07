@@ -4,50 +4,63 @@ import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
-const projects = [
+const approaches = [
   {
     num: "01",
-    tag: "REACT / TYPESCRIPT / FULL-STACK",
-    title: "NAME",
-    desc: "Built full-stack e-commerce site 'NAME' at ITU, starting with HTML/CSS/JS and later rebuilt in React.",
-    tech: ["React", "TypeScript", "Node.js", "Express", "REST API", "HTML", "CSS"],
-    img: "https://doyoungkim.com/images/projects/WebDevelopment/Name.gif",
-    slug: "name-ecommerce",
-    github: "https://github.com/dyoungky/ITU-FinalProject-NAME",
-    live: null,
+    id: "simple-site",
+    tag: "Simple & Fast",
+    title: "Simple Site",
+    desc: "Hand-coded websites built from scratch. No frameworks, no dependencies — just clean, fast, lightweight code.",
+    suitable: "Landing pages, portfolios, simple brochure sites",
+    pros: [
+      "Extremely fast load times",
+      "Full control over every detail",
+      "No platform dependency",
+      "Low maintenance cost",
+    ],
+    cons: [
+      "Client cannot edit content easily",
+      "Not ideal for large or complex projects",
+      "Manual updates required",
+    ],
   },
   {
     num: "02",
-    tag: "WORDPRESS / WEB DESIGN",
-    title: "Dkemy",
-    desc: "WordPress-based project with custom theme design and content management.",
-    tech: ["WordPress", "HTML", "CSS"],
-    img: "https://doyoungkim.com/images/projects/WebDevelopment/Dkemy.gif",
-    slug: "dkemy",
-    github: null,
-    live: null,
+    id: "content-site",
+    tag: "Content-Managed",
+    title: "Content Site",
+    desc: "The world's most popular CMS. Great when clients need to update content themselves — blog posts, team pages, products — without touching code.",
+    suitable: "Company websites, blogs, news sites, content-heavy projects",
+    pros: [
+      "Client can manage content independently",
+      "Large ecosystem of plugins",
+      "Easy to scale content",
+      "Familiar for most clients",
+    ],
+    cons: [
+      "Can get bloated without careful setup",
+      "Requires ongoing updates and maintenance",
+      "Less flexible for custom interactions",
+    ],
   },
   {
     num: "03",
-    tag: "REACT / UI",
-    title: "Ferm Living",
-    desc: "Simple web application built with React, showcasing a collection of furniture items from Ferm Living.",
-    tech: ["React", "HTML", "CSS"],
-    img: "https://doyoungkim.com/images/projects/WebDevelopment/ferm-resposible.gif",
-    slug: "ferm-living",
-    github: "https://github.com/dyoungky/FermLiving",
-    live: "https://react-fermliving-dy.netlify.app/",
-  },
-  {
-    num: "04",
-    tag: "REACT / TRAVEL",
-    title: "Back Roads",
-    desc: "Web application built with React, designed for a travel agency allowing users to browse destinations and travel packages.",
-    tech: ["React", "HTML", "CSS"],
-    img: "https://doyoungkim.com/images/projects/WebDevelopment/Backroads-responsible.gif",
-    slug: "back-roads",
-    github: "https://github.com/dyoungky/BACKROADS",
-    live: "https://react-backroads-dy.netlify.app/",
+    id: "web-app",
+    tag: "Full Product",
+    title: "Web App",
+    desc: "Modern web applications built with React and Next.js. The right choice when your project needs dynamic data, user accounts, complex interactions, or strong SEO.",
+    suitable: "Web apps, dashboards, e-commerce, SaaS products",
+    pros: [
+      "Highly flexible and scalable",
+      "Excellent performance and SEO with Next.js",
+      "Great for complex, interactive products",
+      "Component-based — easy to extend",
+    ],
+    cons: [
+      "Higher development cost",
+      "Requires hosting setup (e.g. Vercel)",
+      "More complex to maintain long-term",
+    ],
   },
 ];
 
@@ -55,90 +68,89 @@ export default function Work() {
   return (
     <>
       <Nav />
-      <main className="pt-32 pb-24 px-8 max-w-6xl mx-auto">
+      <main className="pt-32 pb-24">
 
         {/* Header */}
-        <div className="mb-16">
-          <p className="text-xs tracking-[0.14em] uppercase text-[#324b75]/40 mb-4">Work</p>
+        <div className="px-8 max-w-6xl mx-auto mb-20">
+          <p className="text-xs tracking-[0.14em] uppercase text-[#324b75]/40 mb-6">Solutions</p>
           <h1
-            className="text-5xl md:text-6xl leading-tight"
+            className="text-5xl md:text-7xl leading-[1.05] tracking-tight text-[#1a1f3c] max-w-3xl"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            Selected<br />
-            <em className="italic text-[#293465]">Projects.</em>
+            The right tool<br />
+            <em className="italic text-[#293465]">for the job.</em>
           </h1>
+          <p className="mt-8 text-[15px] text-[#324b75]/60 leading-relaxed max-w-lg">
+            Not every project needs the same solution. We work with three main approaches — each suited to different needs, budgets, and goals.
+          </p>
         </div>
 
-        {/* Project list */}
-        <div className="divide-y divide-[#324b75]/10">
-          {projects.map((p) => (
-            <div key={p.num} className="group/row py-16 grid md:grid-cols-2 gap-12 items-start">
-              {/* Image */}
-              <Link href={`/work/${p.slug}`} className="overflow-hidden bg-[#e8e4dd] aspect-[16/10] block">
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  className="w-full h-full object-cover group-hover/row:scale-105 transition-transform duration-700"
-                />
-              </Link>
+        {/* Approaches */}
+        <div className="px-8 max-w-6xl mx-auto divide-y divide-[#324b75]/10">
+          {approaches.map((a) => (
+            <div key={a.num} id={a.id} className="py-20 grid md:grid-cols-[1fr_2fr] gap-16" style={{ scrollMarginTop: "120px" }}>
 
-              {/* Info */}
-              <div className="flex flex-col justify-center">
-                <p className="text-[10px] tracking-[0.14em] uppercase text-[#324b75]/40 mb-3">{p.tag}</p>
-                <Link href={`/work/${p.slug}`}>
-                  <h2
-                    className="text-3xl md:text-4xl leading-snug mb-4 hover:text-[#293465] transition-colors"
-                    style={{ fontFamily: "var(--font-serif)" }}
-                  >
-                    {p.title}
-                  </h2>
-                </Link>
-                <p className="text-[15px] text-[#324b75]/65 leading-relaxed mb-6">{p.desc}</p>
-
-                {/* Tech tags */}
-                <ul className="flex flex-wrap gap-2 mb-8">
-                  {p.tech.map((t) => (
-                    <li
-                      key={t}
-                      className="text-[11px] tracking-wide border border-[#324b75]/15 px-3 py-1 text-[#324b75]/60"
-                    >
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Links */}
-                <div className="flex gap-6">
-                  <Link
-                    href={`/work/${p.slug}`}
-                    className="text-xs tracking-[0.1em] uppercase text-[#293465] border-b border-[#293465]/40 pb-px hover:border-[#293465] transition-colors"
-                  >
-                    View Case →
-                  </Link>
-                  {p.github && (
-                    <a
-                      href={p.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs tracking-[0.1em] uppercase text-[#293465] border-b border-[#293465]/40 pb-px hover:border-[#293465] transition-colors"
-                    >
-                      GitHub →
-                    </a>
-                  )}
-                  {p.live && (
-                    <a
-                      href={p.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs tracking-[0.1em] uppercase text-[#293465] border-b border-[#293465]/40 pb-px hover:border-[#293465] transition-colors"
-                    >
-                      Live Demo →
-                    </a>
-                  )}
+              {/* Left */}
+              <div>
+                <p className="text-[10px] tracking-[0.14em] uppercase text-[#324b75]/35 mb-3">{a.tag}</p>
+                <h2
+                  className="text-4xl leading-snug text-[#1a1f3c] mb-4"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  {a.title}
+                </h2>
+                <p className="text-sm text-[#324b75]/50 leading-relaxed">{a.desc}</p>
+                <div className="mt-6">
+                  <p className="text-[10px] tracking-[0.14em] uppercase text-[#324b75]/30 mb-2">Best for</p>
+                  <p className="text-sm text-[#324b75]/60 italic">{a.suitable}</p>
                 </div>
               </div>
+
+              {/* Right */}
+              <div className="grid md:grid-cols-2 gap-10">
+                <div>
+                  <p className="text-[10px] tracking-[0.14em] uppercase text-[#324b75]/35 mb-4">Pros</p>
+                  <ul className="space-y-2">
+                    {a.pros.map((p) => (
+                      <li key={p} className="flex gap-3 text-sm text-[#324b75]/65 leading-relaxed">
+                        <span className="text-[#293465] mt-0.5 shrink-0">+</span>
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-[10px] tracking-[0.14em] uppercase text-[#324b75]/35 mb-4">Cons</p>
+                  <ul className="space-y-2">
+                    {a.cons.map((c) => (
+                      <li key={c} className="flex gap-3 text-sm text-[#324b75]/65 leading-relaxed">
+                        <span className="text-[#324b75]/30 mt-0.5 shrink-0">−</span>
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
             </div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="px-8 max-w-6xl mx-auto mt-8 border-t border-[#324b75]/10 pt-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+          <h2
+            className="text-4xl md:text-5xl leading-tight text-[#1a1f3c]"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            Not sure which<br />
+            <em className="italic text-[#293465]">approach fits?</em>
+          </h2>
+          <Link
+            href="/contact"
+            className="text-xs tracking-[0.15em] uppercase bg-[#293465] text-white px-8 py-3.5 hover:bg-[#3a6abf] transition-colors shrink-0"
+          >
+            Let's talk →
+          </Link>
         </div>
 
       </main>
